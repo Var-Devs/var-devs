@@ -1,0 +1,21 @@
+.home-page {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(34, 34, 34);
+
+    h1 {
+        font-size: 4rem;
+        font-weight: var(--fw-bold);
+        color: white;
+    }
+
+    p {
+        font-size: 1.5rem;
+        color: white;
+        margin-top: 10px;
+    }
+}
