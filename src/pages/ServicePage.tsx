@@ -19,6 +19,22 @@ export default function ServicePage() {
           <p>.Use Experience Optimization</p>
         </div>
       </div>
+      <div className="mobile-body">
+        <div className="description">
+          <h2>Also</h2>
+          <h1>Mobile compatible</h1>
+          <p>
+            your website will function seamlessly across various devices,
+            including smartphones and tablets. With our commitment to mobile
+            responsiveness, your website remains accessible and user-friendly,
+            enhancing engagement and satisfaction for all visitors.
+          </p>
+        </div>
+        <img src={mobile_device} />
+      </div>
+      <footer>
+        <p>&copy; Var Devs {new Date().getFullYear()} </p>
+      </footer>
     </div>
   );
 }
