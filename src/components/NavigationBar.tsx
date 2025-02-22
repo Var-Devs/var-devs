@@ -9,10 +9,11 @@ export default function NavigationBar() {
         <img src={Logo}></img>
       </div>
       <div className="links">
-        <a href="#">HOME</a>
-        <a href="#">DEMO</a>
-        <a href="#">TEAM</a>
-        <a href="#">CONTACT</a>
+        <a href="#">Home</a>
+        <a href="#">Demo</a>
+        <a href="#">Services</a>
+        <a href="#">Team</a>
+        <a href="#">Contact</a>
       </div>
     </nav>
   );
