@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
+import ServicePage from "./pages/ServicePage";
 import NavigationBar from "./components/NavigationBar";
 
 export default function App() {
@@ -7,7 +8,8 @@ export default function App() {
     <>
       <NavigationBar />
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/services" element={<ServicePage />} />
       </Routes>
     </>
   );

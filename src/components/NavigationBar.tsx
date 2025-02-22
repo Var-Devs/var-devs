@@ -9,9 +9,9 @@ export default function NavigationBar() {
         <img src={Logo}></img>
       </div>
       <div className="links">
-        <a href="#">Home</a>
+        <a href="/home">Home</a>
         <a href="#">Demo</a>
-        <a href="#">Services</a>
+        <a href="/services">Services</a>
         <a href="#">Team</a>
         <a href="#">Contact</a>
       </div>
