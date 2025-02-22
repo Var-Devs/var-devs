@@ -120,6 +120,15 @@
     }
   }
 
+  .coming-soon {
+    display: flex;
+    letter-spacing: 2px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 300px;
+  }
+
   footer {
     p {
       height: 40px;

@@ -32,6 +32,11 @@ export default function ServicePage() {
         </div>
         <img src={mobile_device} />
       </div>
+      <div className="coming-soon">
+        <h1>Coming Soon...</h1>
+        <h3>Mobile App</h3>
+      </div>
+
       <footer>
         <p>&copy; Var Devs {new Date().getFullYear()} </p>
       </footer>
