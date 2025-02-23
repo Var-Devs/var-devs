@@ -10,10 +10,10 @@ export default function NavigationBar() {
       </div>
       <div className="links">
         <a href="/home">Home</a>
-        <a href="#">Demo</a>
+        {/* <a href="#">Demo</a> */}
         <a href="/services">Services</a>
-        <a href="#">Team</a>
-        <a href="#">Contact</a>
+        {/* <a href="#">Team</a> */}
+        <a href="/contactus">Contact</a>
       </div>
     </nav>
   );

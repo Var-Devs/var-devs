@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
 import "./HomePage.scss";
 import template1 from "../assets/template_img/1.png";
 import template2 from "../assets/template_img/2.png";
@@ -14,22 +14,23 @@ import figmaIcon from "../assets/flutterIcon.png";
 import safariIcon from "../assets/safariIcon.png";
 
 export default function HomePage() {
-  const rowRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-  const handleScroll = () => {
-    const scrollY = window.scrollY;
-    rowRefs.current.forEach((row) => {
-      if (row) {
-        if (scrollY > 20) {
-          row.style.transform = "rotate(0deg)";
-        } else {
-          row.style.transform = "rotate(20deg)";
-        }
-      }
-    });
-  };
+  const [isTop, setIsTop] = useState(true);
+  const images = [
+    template1,
+    template2,
+    template3,
+    template4,
+    template5,
+    template6,
+    template7,
+    template8
+  ];
 
   useEffect(() => {
+    const handleScroll = () => {
+      setIsTop(window.scrollY < 50);
+    };
+
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -39,31 +40,26 @@ export default function HomePage() {
   return (
     <div className="home-page">
       <div className="template-background">
-        <div
-          className="row"
-          ref={(el) => {
-            rowRefs.current[0] = el;
-          }}
-        >
-          <img src={template1} className="templates" />
-          {/* <img src={teamplate1} /> */}
-          {/* </div> */}
-          <img src={template2} className="templates" />
-          <img src={template3} className="templates" />
-          <img src={template7} className="templates" />
+        <div className={`scroll-row left ${isTop ? "tilted" : ""}`}>
+          <div className="scroll-content">
+            {images.map((img, index) => (
+              <img key={index} src={img} className="templates" />
+            ))}
+            {images.map((img, index) => (
+              <img key={`duplicate-${index}`} src={img} className="templates" />
+            ))}
+          </div>
         </div>
-        <div
-          className="row"
-          ref={(el) => {
-            rowRefs.current[1] = el;
-          }}
-        >
-          <img src={template4} className="templates" />
-          {/* <img src={teamplate1} /> */}
-          {/* </div> */}
-          <img src={template5} className="templates" />
-          <img src={template6} className="templates" />
-          <img src={template8} className="templates" />
+
+        <div className={`scroll-row right ${isTop ? "tilted" : ""}`}>
+          <div className="scroll-content">
+            {images.map((img, index) => (
+              <img key={index} src={img} className="templates" />
+            ))}
+            {images.map((img, index) => (
+              <img key={`duplicate-${index}`} src={img} className="templates" />
+            ))}
+          </div>
         </div>
       </div>
       <div className="goals-body">

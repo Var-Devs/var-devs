@@ -1,0 +1,112 @@
+* {
+  -webkit-appearance: none;
+}
+
+.contactus-body {
+  color: white;
+  padding-top: 100px;
+  overflow: hidden;
+  .contact-header {
+    border-image: linear-gradient(to right, #ffff 0%, #0c0c0c 100%) 1;
+    border-width: 1px;
+    border-style: solid;
+
+    border-left: 0;
+    border-right: 0;
+    display: flex;
+    justify-content: center;
+    h1 {
+      font-size: 60px;
+    }
+  }
+  .contact-main {
+    display: flex;
+    height: 700px;
+    .left {
+      min-width: 60%;
+
+      .header {
+        display: flex;
+        justify-content: end;
+        border-image: linear-gradient(to right, #0c0c0c 0%, #ffffff 100%) 1;
+        border-width: 1px;
+        border-style: solid;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+      }
+      .header h2 {
+        font-size: 45px;
+      }
+      .main form {
+        padding-top: 150px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 50px;
+
+        input,
+        textarea {
+          width: 300px;
+          height: 40px;
+          border: none;
+          background-color: transparent;
+          border-bottom: 2px solid white;
+          color: white;
+          font-size: 18px;
+          font-weight: 300;
+          ::placeholder {
+            color: white;
+          }
+          outline: none;
+        }
+        textarea {
+          height: 100px;
+          resize: none;
+        }
+        button {
+          width: 180px;
+          height: 60px;
+          border-radius: 10px;
+          border-style: none;
+          background-color: #06080f;
+          font-size: 20px;
+          font-weight: bold;
+          color: white;
+          border: 1px solid #172a47;
+          box-shadow: 0 0px 10px 0 rgb(43, 0, 255);
+        }
+      }
+    }
+    .right {
+      min-width: 40%;
+      min-height: 100%;
+      border-image: linear-gradient(to bottom, #ffff 0%, #0c0c0c 100%) 1;
+      border-width: 1px;
+      border-style: solid;
+      border-top: 0;
+      border-right: 0;
+      border-bottom: 0;
+    }
+    @media (max-width: 750px) {
+      .left {
+        min-width: 90%;
+      }
+      .right {
+        max-width: 10%;
+      }
+    }
+  }
+}
+
+footer {
+  height: 40px;
+  color: rgba(255, 255, 255, 0.618);
+  font-size: 15px;
+  font-weight: 100;
+  padding-left: 20px;
+  padding-top: 10px;
+}
