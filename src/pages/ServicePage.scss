@@ -3,6 +3,13 @@
   padding: 0;
 }
 
+p, h1, h2, h3{
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
 .service-body {
   height: auto;
   overflow: hidden;
@@ -94,6 +101,11 @@
     }
   }
 
+  .laptop-description{
+    height: auto;
+    width: 20vw;
+  }
+
   .mobile-body img {
     width: 220px;
     height: 400px;
@@ -138,4 +150,27 @@
       letter-spacing: 0px;
     }
   }
+}
+
+.cta-container {
+  align-items: center;
+  text-align: center;
+  margin-top: 3vh;
+  margin-left: 180px;
+}
+
+.cta-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #0056b3;
 }
