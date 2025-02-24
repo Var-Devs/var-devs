@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./HomePage.scss";
 import template1 from "../assets/template_img/1.png";
 import template2 from "../assets/template_img/2.png";
@@ -13,7 +13,7 @@ import chatIcon from "../assets/chatIcon.png";
 import figmaIcon from "../assets/flutterIcon.png";
 import safariIcon from "../assets/safariIcon.png";
 
-export default function HomePage() {
+const HomePage: React.FC = () => {
   const [isTop, setIsTop] = useState(true);
   const images = [
     template1,
@@ -127,4 +127,6 @@ export default function HomePage() {
       </footer>
     </div>
   );
-}
+};
+
+export default HomePage;

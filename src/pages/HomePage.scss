@@ -92,6 +92,15 @@
 
     border-right: 1px solid #838383;
   }
+  @media (max-width: 980px) {
+    .main {
+      padding-left: 10px;
+      background-color: red;
+      .side {
+        width: 100px;
+      }
+    }
+  }
   .main .side h1 {
     writing-mode: vertical-lr;
     text-orientation: sideways;
@@ -118,9 +127,6 @@
 
 .work-structure {
   overflow: hidden;
-  .header {
-    background-color: beige;
-  }
   .work-structure-body {
     padding: 20px;
     width: 100%;

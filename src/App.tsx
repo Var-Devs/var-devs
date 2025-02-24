@@ -3,16 +3,19 @@ import HomePage from "./pages/HomePage";
 import ServicePage from "./pages/ServicePage";
 import ContactUs from "./pages/ContactUs";
 import NavigationBar from "./components/NavigationBar";
+import React from "react";
 
-export default function App() {
+const App: React.FC = () => {
   return (
     <>
       <NavigationBar />
       <Routes>
-        <Route path="/home" element={<HomePage />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/services" element={<ServicePage />} />
         <Route path="/contactus" element={<ContactUs />} />
       </Routes>
     </>
   );
-}
+};
+
+export default App;
