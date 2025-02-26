@@ -3,45 +3,27 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"; // Import navigation hook
 
 import "./HomePage.scss";
-import template1 from "../assets/template_img/1.png";
-import template2 from "../assets/template_img/2.png";
-import template3 from "../assets/template_img/3.png";
-import template4 from "../assets/template_img/4.png";
-import template5 from "../assets/template_img/5.png";
-import template6 from "../assets/template_img/6.png";
-import template7 from "../assets/template_img/7.png";
-import template8 from "../assets/template_img/8.png";
 
-import chatIcon from "../assets/chatIcon.png";
-import figmaIcon from "../assets/flutterIcon.png";
-import safariIcon from "../assets/safariIcon.png";
+import chatIcon from "../assets/icons/chat.png";
+import figmaIcon from "../assets/icons/figma.png";
+import safariIcon from "../assets/icons/safari.png";
 
-import pageTitle from "../hooks/pageTitle";
+import { pageTitle } from "../hooks/pageTitle";
 
 export default function HomePage() {
-  const [isTop, setIsTop] = useState(true);
+  const [isTop, setIsTop] = useState(window.scrollY < 100);
   const navigate = useNavigate(); // Initialize navigation
 
-  const images = [
-    template1,
-    template2,
-    template3,
-    template4,
-    template5,
-    template6,
-    template7,
-    template8,
-  ];
+  const topTemplates = Object.keys(import.meta.glob("/src/assets/templates/*.{png,jpg,jpeg,svg}")).sort(() => Math.random() - 0.5)
+  const bottomTemplates = Object.keys(import.meta.glob("/src/assets/templates/*.{png,jpg,jpeg,svg}")).sort(() => Math.random() - 0.5)
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsTop(window.scrollY < 50);
+      setIsTop(window.scrollY < 100);
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   pageTitle("Welcome!");
@@ -50,23 +32,23 @@ export default function HomePage() {
     <div className="home-page">
       <div className="template-background">
         <div className={`scroll-row left ${isTop ? "tilted" : ""}`}>
-          <div className="scroll-content">
-            {images.map((img, index) => (
-              <img key={index} src={img} className="templates" />
+          <div className="scroll-content" style={{color: "white"}}>
+            { topTemplates.map((template, index) => (
+              <img key={`template-${index}`} src={template} className="templates" />
             ))}
-            {images.map((img, index) => (
-              <img key={`duplicate-${index}`} src={img} className="templates" />
-            ))}
+            { topTemplates.map((template, index) => (
+              <img key={`duplicate-${index}`} src={template} className="templates" />
+            )) }
           </div>
         </div>
 
         <div className={`scroll-row right ${isTop ? "tilted" : ""}`}>
           <div className="scroll-content">
-            {images.map((img, index) => (
-              <img key={index} src={img} className="templates" />
+            {bottomTemplates.map((template, index) => (
+              <img key={index} src={template} className="templates" />
             ))}
-            {images.map((img, index) => (
-              <img key={`duplicate-${index}`} src={img} className="templates" />
+            {bottomTemplates.map((template, index) => (
+              <img key={`duplicate-${index}`} src={template} className="templates" />
             ))}
           </div>
         </div>
@@ -130,12 +112,12 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-
         <div className="cta-container">
           <button className="cta-button" onClick={() => navigate("/contactus")}>
             Get in Touch
           </button>
         </div>
+      </div>
 
         {/* 
         SOCIAL FOOTER FOR WHEN WE'RE RICH
@@ -147,8 +129,6 @@ export default function HomePage() {
               <img src={"./src/assets/socialicons/github-logo.png"} alt="Vardevs GitHub" className="social-icon" />
             </a>
           </div> */}
-      </div>
-
       <footer>
         <p>&copy; Vardevs {new Date().getFullYear()} </p>
       </footer>

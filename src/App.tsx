@@ -7,14 +7,14 @@ import React from "react";
 
 const App: React.FC = () => {
   return (
-    <>
+    <div className="app">
       <NavigationBar />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/services" element={<ServicePage />} />
-        <Route path="/contactus" element={<ContactUs />} />
+        <Route path="/contact-us" element={<ContactUs />} />
       </Routes>
-    </>
+    </div>
   );
 };
 
