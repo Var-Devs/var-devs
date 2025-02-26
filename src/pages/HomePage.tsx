@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"; // Import navigation hook
 
@@ -14,8 +13,12 @@ export default function HomePage() {
   const [isTop, setIsTop] = useState(window.scrollY < 100);
   const navigate = useNavigate(); // Initialize navigation
 
-  const topTemplates = Object.keys(import.meta.glob("/src/assets/templates/*.{png,jpg,jpeg,svg}")).sort(() => Math.random() - 0.5)
-  const bottomTemplates = Object.keys(import.meta.glob("/src/assets/templates/*.{png,jpg,jpeg,svg}")).sort(() => Math.random() - 0.5)
+  const topTemplates = Object.keys(
+    import.meta.glob("/src/assets/templates/*.{png,jpg,jpeg,svg}")
+  ).sort(() => Math.random() - 0.5);
+  const bottomTemplates = Object.keys(
+    import.meta.glob("/src/assets/templates/*.{png,jpg,jpeg,svg}")
+  ).sort(() => Math.random() - 0.5);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,13 +35,21 @@ export default function HomePage() {
     <div className="home-page">
       <div className="template-background">
         <div className={`scroll-row left ${isTop ? "tilted" : ""}`}>
-          <div className="scroll-content" style={{color: "white"}}>
-            { topTemplates.map((template, index) => (
-              <img key={`template-${index}`} src={template} className="templates" />
+          <div className="scroll-content" style={{ color: "white" }}>
+            {topTemplates.map((template, index) => (
+              <img
+                key={`template-${index}`}
+                src={template}
+                className="templates"
+              />
             ))}
-            { topTemplates.map((template, index) => (
-              <img key={`duplicate-${index}`} src={template} className="templates" />
-            )) }
+            {topTemplates.map((template, index) => (
+              <img
+                key={`duplicate-${index}`}
+                src={template}
+                className="templates"
+              />
+            ))}
           </div>
         </div>
 
@@ -48,7 +59,11 @@ export default function HomePage() {
               <img key={index} src={template} className="templates" />
             ))}
             {bottomTemplates.map((template, index) => (
-              <img key={`duplicate-${index}`} src={template} className="templates" />
+              <img
+                key={`duplicate-${index}`}
+                src={template}
+                className="templates"
+              />
             ))}
           </div>
         </div>
@@ -119,7 +134,7 @@ export default function HomePage() {
         </div>
       </div>
 
-        {/* 
+      {/* 
         SOCIAL FOOTER FOR WHEN WE'RE RICH
         <div className="social-buttons">
             <a
@@ -129,9 +144,6 @@ export default function HomePage() {
               <img src={"./src/assets/socialicons/github-logo.png"} alt="Vardevs GitHub" className="social-icon" />
             </a>
           </div> */}
-      <footer>
-        <p>&copy; Vardevs {new Date().getFullYear()} </p>
-      </footer>
     </div>
   );
-};
+}

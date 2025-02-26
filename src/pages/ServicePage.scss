@@ -3,7 +3,10 @@
   padding: 0;
 }
 
-p, h1, h2, h3{
+p,
+h1,
+h2,
+h3 {
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -101,7 +104,7 @@ p, h1, h2, h3{
     }
   }
 
-  .laptop-description{
+  .laptop-description {
     height: auto;
     width: 20vw;
   }
@@ -139,16 +142,6 @@ p, h1, h2, h3{
     align-items: center;
     flex-direction: column;
     height: 300px;
-  }
-
-  footer {
-    p {
-      height: 40px;
-      color: rgba(255, 255, 255, 0.618);
-      font-size: 15px;
-      font-weight: 100;
-      letter-spacing: 0px;
-    }
   }
 }
 
