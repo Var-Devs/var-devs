@@ -1,5 +1,7 @@
+
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"; // Import navigation hook
+
 import "./HomePage.scss";
 import template1 from "../assets/template_img/1.png";
 import template2 from "../assets/template_img/2.png";
@@ -152,4 +154,6 @@ export default function HomePage() {
       </footer>
     </div>
   );
-}
+};
+
+export default HomePage;
