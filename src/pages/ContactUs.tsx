@@ -1,5 +1,5 @@
 import "./ContactUs.scss";
-import pageTitle from "..//hooks/pageTitle";
+import { pageTitle } from "..//hooks/pageTitle";
 
 export default function ContactUs() {
   pageTitle("Contact Us");

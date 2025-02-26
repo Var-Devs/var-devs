@@ -1,9 +1,11 @@
 import { useEffect } from "react";
 
-const pageTitle = (pageTitle: string) => {
+export const pageTitle = (pageTitle: string) => {
   useEffect(() => {
     document.title = `Vardevs - ${pageTitle}`;
   }, [pageTitle]);
 };
 
-export default pageTitle;
+export const getPageTitle = () => {
+  return document.title
+}

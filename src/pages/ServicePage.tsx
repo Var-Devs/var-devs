@@ -2,7 +2,7 @@ import "./ServicePage.scss";
 import mobile_device from "../assets/mobile_device.png";
 import laptop_device from "../assets/laptop_device.png";
 
-import pageTitle from "..//hooks/pageTitle";
+import { pageTitle } from "..//hooks/pageTitle";
 
 export default function ServicePage() {
 
