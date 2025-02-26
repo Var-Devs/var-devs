@@ -6,8 +6,8 @@ export default function NavigationBar() {
   return (
     <nav>
       <div className="logo">
-        <h1>VarDevs</h1>
-        <img src={Logo} alt="VarDevs Logo" />
+        <h1>Vardevs</h1>
+        <img src={Logo}></img>
       </div>
       <div className="links">
         <Link to="/">Home</Link> {/* Change to Link component */}

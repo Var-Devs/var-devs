@@ -2,7 +2,12 @@ import "./ServicePage.scss";
 import mobile_device from "../assets/mobile_device.png";
 import laptop_device from "../assets/laptop_device.png";
 
+import pageTitle from "..//hooks/pageTitle";
+
 export default function ServicePage() {
+
+  pageTitle("Services");
+
   return (
     <div className="service-body">
       <div className="header">
@@ -12,33 +17,36 @@ export default function ServicePage() {
       <div className="laptop-body">
         <img src={laptop_device} />
         <div className="description">
-          <h1>Web Support</h1>
-          <p>.Cross-browser Compatibility</p>
-          <p>.Responsive Design</p>
-          <p>.Support and Update</p>
-          <p>.Use Experience Optimization</p>
+          <h1>Full Stack Development</h1>
+  <div className= "laptop-description">
+    <p>
+      Enjoy seamless compatibility and integration
+      with our teams skillset for intuitive design and expert delivery.
+      We provide solutions and adaptability for all stages of your softwares development life-cycle.
+    </p>
+  </div>
+
         </div>
       </div>
       <div className="mobile-body">
         <div className="description">
-          <h2>Also</h2>
-          <h1>Mobile compatible</h1>
+          <h2>Responsive Designs</h2>
+          <h1>made easy.</h1>
           <p>
-            your website will function seamlessly across various devices,
-            including smartphones and tablets. With our commitment to mobile
-            responsiveness, your website remains accessible and user-friendly,
-            enhancing engagement and satisfaction for all visitors.
+          With our commitment making only the highest of quality works, 
+          our applications function seamlessly across various devices,
+          including mobile and tablet devices.
           </p>
         </div>
         <img src={mobile_device} />
       </div>
       <div className="coming-soon">
-        <h1>Coming Soon...</h1>
-        <h3>Mobile App</h3>
+        <h1>Our Latest Projects</h1>
+        <h3>Coming Soon...</h3>
       </div>
 
       <footer>
-        <p>&copy; Var Devs {new Date().getFullYear()} </p>
+        <p>&copy; Vardevs {new Date().getFullYear()} </p>
       </footer>
     </div>
   );

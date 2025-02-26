@@ -12,6 +12,7 @@
     "framer-motion": "^12.4.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-helmet": "^6.1.0",
     "react-router-dom": "^6.29.0",
     "sass": "^1.85.0"
   },

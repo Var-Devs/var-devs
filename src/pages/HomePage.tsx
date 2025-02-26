@@ -1,4 +1,7 @@
-import React, { useEffect, useState } from "react";
+
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import navigation hook
+
 import "./HomePage.scss";
 import template1 from "../assets/template_img/1.png";
 import template2 from "../assets/template_img/2.png";
@@ -13,8 +16,12 @@ import chatIcon from "../assets/chatIcon.png";
 import figmaIcon from "../assets/flutterIcon.png";
 import safariIcon from "../assets/safariIcon.png";
 
-const HomePage: React.FC = () => {
+import pageTitle from "../hooks/pageTitle";
+
+export default function HomePage() {
   const [isTop, setIsTop] = useState(true);
+  const navigate = useNavigate(); // Initialize navigation
+
   const images = [
     template1,
     template2,
@@ -23,7 +30,7 @@ const HomePage: React.FC = () => {
     template5,
     template6,
     template7,
-    template8
+    template8,
   ];
 
   useEffect(() => {
@@ -36,6 +43,8 @@ const HomePage: React.FC = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  pageTitle("Welcome!");
 
   return (
     <div className="home-page">
@@ -64,7 +73,7 @@ const HomePage: React.FC = () => {
       </div>
       <div className="goals-body">
         <div className="header">
-          <h3>Your IDEA</h3>
+          <h3>Let's make your ideas</h3>
         </div>
         <div className="main">
           <div className="side">
@@ -72,7 +81,7 @@ const HomePage: React.FC = () => {
           </div>
           <div className="work-structure">
             <div className="header">
-              <h1>Is Our Goal</h1>
+              <h1>a reality.</h1>
             </div>
             <div className="work-structure-body">
               <div className="structure-box">
@@ -121,9 +130,27 @@ const HomePage: React.FC = () => {
             </div>
           </div>
         </div>
+
+        <div className="cta-container">
+          <button className="cta-button" onClick={() => navigate("/contactus")}>
+            Get in Touch
+          </button>
+        </div>
+
+        {/* 
+        SOCIAL FOOTER FOR WHEN WE'RE RICH
+        <div className="social-buttons">
+            <a
+              href="https://github.com/var-devs"
+              target="_blank"
+              rel="noopener noreferrer">
+              <img src={"./src/assets/socialicons/github-logo.png"} alt="Vardevs GitHub" className="social-icon" />
+            </a>
+          </div> */}
       </div>
+
       <footer>
-        <p>&copy; Var Devs {new Date().getFullYear()} </p>
+        <p>&copy; Vardevs {new Date().getFullYear()} </p>
       </footer>
     </div>
   );
