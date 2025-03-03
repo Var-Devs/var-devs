@@ -5,6 +5,7 @@ import ContactUs from "./pages/ContactUs";
 import NavigationBar from "./components/NavigationBar";
 import React from "react";
 import "./index.scss"
+import Footer from "./components/Footer";
 
 const App: React.FC = () => {
   return (
@@ -15,6 +16,7 @@ const App: React.FC = () => {
         <Route path="/services" element={<ServicePage />} />
         <Route path="/contact-us" element={<ContactUs />} />
       </Routes>
+      <Footer />
     </div>
   );
 };

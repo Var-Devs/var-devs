@@ -155,7 +155,6 @@ export default function HomePage() {
             <ChatBubbleIcon id="chat-bubble"/>
         </button>
       </div>
-
     </div>
   );
-};
+}

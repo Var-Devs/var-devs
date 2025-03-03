@@ -2,7 +2,10 @@
   -webkit-appearance: none;
 }
 
-p, h1, h2, h3{
+p,
+h1,
+h2,
+h3 {
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -30,7 +33,7 @@ p, h1, h2, h3{
     height: 700px;
     .left {
       min-width: 60%;
-      
+
       .header {
         display: flex;
         justify-content: end;
