@@ -37,9 +37,6 @@ export default function ContactUs() {
           {/* FUTURE COMPANY INFO EMAIL, PHONE, ADDRESS ETC, WILL BE COLLAPSED OR HIDDEN AT CERTAIN VW */}
         </div>
       </div>
-      <footer>
-        <p>&copy; Vardevs {new Date().getFullYear()} </p>
-      </footer>
     </div>
   );
 }
