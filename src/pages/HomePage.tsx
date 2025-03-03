@@ -1,8 +1,6 @@
+import "./HomePage.scss";
 
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import navigation hook
-
-import "./HomePage.scss";
 
 import chatIcon from "../assets/icons/chat.png";
 import figmaIcon from "../assets/icons/figma.png";
@@ -11,8 +9,6 @@ import safariIcon from "../assets/icons/safari.png";
 import { pageTitle } from "../hooks/pageTitle";
 
 export default function HomePage() {
-  const navigate = useNavigate()
-  const [isTop, setIsTop] = useState(window.scrollY < 100);
   const [templates, setTemplates] = useState<{top: string[]; bottom: string[]}>({top: [], bottom: []})
 
   useEffect(() => {
@@ -28,12 +24,6 @@ export default function HomePage() {
       "bottom": bottomTemplates
     })
 
-    const handleScroll = () => {
-      setIsTop(window.scrollY < 100);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   pageTitle("Welcome!");
