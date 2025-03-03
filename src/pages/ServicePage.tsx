@@ -1,6 +1,6 @@
 import "./ServicePage.scss";
-import mobile_device from "../assets/mobile_device.png";
-import laptop_device from "../assets/laptop_device.png";
+import mobile_device from "../assets/images/phone.png";
+import laptop_device from "../assets/images/laptop.png";
 
 import { pageTitle } from "..//hooks/pageTitle";
 

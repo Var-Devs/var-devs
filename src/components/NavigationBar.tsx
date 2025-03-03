@@ -1,11 +1,12 @@
-import "../index.scss";
+import "./NavigationBar.scss";
 
-import { useEffect, useMemo, useState } from "react";
 import Logo from "../assets/Logo.png";
+import { useEffect, useMemo, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 export default function NavigationBar() {
   const currentPage = useLocation()
+  const [scrollAmount, setScrollAmount] = useState(0)
   const [scrollProgress, setScrollProgress] = useState(0)
 
   useEffect(() => {
@@ -13,15 +14,15 @@ export default function NavigationBar() {
         const maxScroll = window.innerHeight * 0.6;
         const scrollTop = Math.min(window.scrollY, maxScroll);
         const scrollPercent = (scrollTop / maxScroll) * 100;
-
         setScrollProgress(scrollPercent);
+
+        setScrollAmount(window.scrollY)
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  console.log(scrollProgress)
   const titleStyling = useMemo(() => {
     const inverseFactor = 1 - scrollProgress / 100
     const baseHeight = "calc(50vh - 40px)"
@@ -47,18 +48,18 @@ export default function NavigationBar() {
 
   return (
     <nav>
-        {currentPage.pathname === "/" ? (
-            <div className="logo">
-              <h1 className="titleAnim" style={titleStyling}>VarDevs</h1>
-              <img src={Logo} className="logoAnim" style={logoStyling}/>
-            </div>
-          ) : (
-            <div className="logo">
-              <h1>VarDevs</h1>
-              <img src={Logo}/>
-            </div>
-          )
-        }
+      <div className="background-gradient"></div>
+      {currentPage.pathname === "/" ? (
+        <div className={(scrollAmount > window.innerHeight - 20) ? "brand disappear" : "brand"}>
+          <h1 className="titleAnim" style={titleStyling}>VarDevs</h1>
+          <img src={Logo} className="logoAnim" style={logoStyling}/>
+        </div>
+      ) : (
+        <div className={(scrollAmount > window.innerHeight - 20) ? "brand disappear" : "brand"}>
+          <h1>VarDevs</h1>
+          <img src={Logo}/>
+        </div>
+      )}
       <div className="links">
         <Link to="/">Home</Link>
         {/* <Link to="#">Demo</Link> */}
