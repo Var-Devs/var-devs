@@ -39,11 +39,10 @@ nav {
         }
   
         .titleAnim {
-            position: relative;
-            top: calc(50vh - 40px);
+            position: absolute;
             z-index: 9999;
-            font-size: 160px;
-            text-shadow: -5px 10px 10px rgba(0, 0, 0, 1);
+            // font-size: 160px;
+            // text-shadow: -5px 10px 10px rgba(0, 0, 0, 1);
         }
   
         img {
@@ -52,8 +51,8 @@ nav {
         }
   
         .logoAnim {
-            position: relative;
-            left: -34vw;
+            position: absolute;
+            right: 0;
         }
     }
   
