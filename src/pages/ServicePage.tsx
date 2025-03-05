@@ -5,7 +5,6 @@ import laptop_device from "../assets/images/laptop.png";
 import { pageTitle } from "..//hooks/pageTitle";
 
 export default function ServicePage() {
-
   pageTitle("Services");
 
   return (
@@ -18,14 +17,14 @@ export default function ServicePage() {
         <img src={laptop_device} />
         <div className="description">
           <h1>Full Stack Development</h1>
-  <div className= "laptop-description">
-    <p>
-      Enjoy seamless compatibility and integration
-      with our teams skillset for intuitive design and expert delivery.
-      We provide solutions and adaptability for all stages of your softwares development life-cycle.
-    </p>
-  </div>
-
+          <div className="laptop-description">
+            <p>
+              Enjoy seamless compatibility and integration with our teams
+              skillset for intuitive design and expert delivery. We provide
+              solutions and adaptability for all stages of your softwares
+              development life-cycle.
+            </p>
+          </div>
         </div>
       </div>
       <div className="mobile-body">
@@ -33,9 +32,9 @@ export default function ServicePage() {
           <h2>Responsive Designs</h2>
           <h1>made easy.</h1>
           <p>
-          With our commitment making only the highest of quality works, 
-          our applications function seamlessly across various devices,
-          including mobile and tablet devices.
+            With our commitment making only the highest of quality works, our
+            applications function seamlessly across various devices, including
+            mobile and tablet devices.
           </p>
         </div>
         <img src={mobile_device} />
@@ -44,10 +43,6 @@ export default function ServicePage() {
         <h1>Our Latest Projects</h1>
         <h3>Coming Soon...</h3>
       </div>
-
-      <footer>
-        <p>&copy; Vardevs {new Date().getFullYear()} </p>
-      </footer>
     </div>
   );
 }

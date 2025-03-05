@@ -13,11 +13,11 @@ export default function NavigationBar() {
 
   useEffect(() => {
     const handleScroll = () => {
-        // const maxScroll = window.innerHeight * 0.6;
-        // const scrollTop = Math.min(window.scrollY, maxScroll);
-        // const scrollPercent = (scrollTop / maxScroll) * 100;
-        // setScrollProgress(scrollPercent);
-        setScrollAmount(window.scrollY)
+      // const maxScroll = window.innerHeight * 0.6;
+      // const scrollTop = Math.min(window.scrollY, maxScroll);
+      // const scrollPercent = (scrollTop / maxScroll) * 100;
+      // setScrollProgress(scrollPercent);
+      setScrollAmount(window.scrollY);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -31,7 +31,7 @@ export default function NavigationBar() {
   //   const fontMaxSize = 160
   //   const shadowBlur = 10 - (10 * (scrollProgress / 100))
   //   const shadowOpacity = 1 - (scrollProgress / 100)
-    
+
   //   return {
   //     top: `calc(${inverseFactor} * (${baseHeight}))`,
   //     fontSize: `${fontMinSize + (fontMaxSize - fontMinSize) * inverseFactor}px`,
@@ -58,8 +58,9 @@ export default function NavigationBar() {
       ) : ( */}
         <div className={(scrollAmount > window.innerHeight - scrollThreshhold) ? "brand disappear" : "brand"}>
           <h1>VarDevs</h1>
-          <img src={Logo}/>
-        </div>
+        </a>
+        <img src={Logo} />
+      </div>
       {/* )} */}
       <div className="links">
         <Link to="/">Home</Link>
@@ -67,6 +68,7 @@ export default function NavigationBar() {
         <Link to="/services">Services</Link>
         {/* <Link to="#">Team</Link> */}
         <Link to="/contact-us">Contact</Link>
+        <Link to="/price">Price</Link>
       </div>
     </nav>
   );
