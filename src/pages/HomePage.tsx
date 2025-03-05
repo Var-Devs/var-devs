@@ -144,11 +144,6 @@ export default function HomePage() {
           </div>
         )
       }
-      <div className="footer">
-        <p>
-          &copy; VarDevs { Date().split(" ")[3] }
-        </p>
-      </div>
 
       <div className="contact-us">
         <button onClick={() => navigate("/contact-us")}>

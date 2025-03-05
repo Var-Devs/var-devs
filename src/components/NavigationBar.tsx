@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function NavigationBar() {
-  // const currentPage = useLocation()
+  const scrollThreshhold = 80
   const [scrollAmount, setScrollAmount] = useState(0)
   // const [scrollProgress, setScrollProgress] = useState(0)
 
@@ -49,14 +49,14 @@ export default function NavigationBar() {
 
   return (
     <nav>
-      <div className="background-gradient"></div>
+      <div className={(scrollAmount > window.innerHeight - scrollThreshhold) ? "background-gradient left" : "background-gradient"}></div>
       {/* {currentPage.pathname === "/" ? (
         <div className={(scrollAmount > window.innerHeight - 20) ? "brand disappear" : "brand"}>
           <h1 className="titleAnim" style={titleStyling}>VarDevs</h1>
           <img src={Logo} className="logoAnim" style={logoStyling}/>
         </div>
       ) : ( */}
-        <div className={(scrollAmount > window.innerHeight - 20) ? "brand disappear" : "brand"}>
+        <div className={(scrollAmount > window.innerHeight - scrollThreshhold) ? "brand disappear" : "brand"}>
           <h1>VarDevs</h1>
           <img src={Logo}/>
         </div>
