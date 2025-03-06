@@ -2,10 +2,7 @@
   -webkit-appearance: none;
 }
 
-p,
-h1,
-h2,
-h3 {
+p, h1, h2, h3 {
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -16,6 +13,7 @@ h3 {
   color: white;
   padding-top: 100px;
   overflow: hidden;
+  
   .contact-header {
     border-image: linear-gradient(to right, #ffff 0%, #0c0c0c 100%) 1;
     border-width: 1px;
