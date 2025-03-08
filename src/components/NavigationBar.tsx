@@ -68,7 +68,7 @@ export default function NavigationBar() {
         </div>
       </nav>
       <div className={`side-nav ${menuOpen ? "open" : ""}`}>
-        <div className="links">
+        <div className="side-links">
           <Link to="/" onClick={() => setMenuOpen(false)}>
             Home
           </Link>

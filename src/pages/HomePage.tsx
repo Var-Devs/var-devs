@@ -195,7 +195,6 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-          ), )
           <div className="contact-us">
             <button onClick={() => navigate("/contact-us")}>
               <ChatBubbleIcon id="chat-bubble" />
