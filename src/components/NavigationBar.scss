@@ -115,6 +115,69 @@ nav {
 @media only screen and (max-width: 600px) {
   nav .links {
     justify-content: end;
+    display: none;
     // padding-right: 10px;
+  }
+  button {
+    display: block;
+  }
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  // display: none;
+}
+.menu-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.side-nav {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100vh;
+  background: rgb(23, 23, 23);
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  border-radius: 10px 0px 0px 10px;
+  z-index: 100;
+
+  .links {
+    color: white;
+    z-index: 1000;
+    text-decoration: none;
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+.side-nav.open {
+  right: 0;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
   }
 }

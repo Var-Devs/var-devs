@@ -6,17 +6,17 @@ import Logo from "../assets/Logo.png";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+import { RxHamburgerMenu } from "react-icons/rx";
+import { HiMiniXMark } from "react-icons/hi2";
+
 export default function NavigationBar() {
   const scrollThreshhold = 80;
   const [scrollAmount, setScrollAmount] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
   // const [scrollProgress, setScrollProgress] = useState(0)
 
   useEffect(() => {
     const handleScroll = () => {
-      // const maxScroll = window.innerHeight * 0.6;
-      // const scrollTop = Math.min(window.scrollY, maxScroll);
-      // const scrollPercent = (scrollTop / maxScroll) * 100;
-      // setScrollProgress(scrollPercent);
       setScrollAmount(window.scrollY);
     };
 
@@ -24,66 +24,65 @@ export default function NavigationBar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // const titleStyling = useMemo(() => {
-  //   const inverseFactor = 1 - scrollProgress / 100
-  //   const baseHeight = "calc(50vh - 40px)"
-  //   const fontMinSize = 35
-  //   const fontMaxSize = 160
-  //   const shadowBlur = 10 - (10 * (scrollProgress / 100))
-  //   const shadowOpacity = 1 - (scrollProgress / 100)
-
-  //   return {
-  //     top: `calc(${inverseFactor} * (${baseHeight}))`,
-  //     fontSize: `${fontMinSize + (fontMaxSize - fontMinSize) * inverseFactor}px`,
-  //     textShadow: `-5px 10px ${Math.max(shadowBlur, 0)}px rgba(0, 0, 0, ${shadowOpacity})`
-  //   }
-  // }, [scrollProgress])
-
-  // const logoStyling = useMemo(() => {
-  //   const leftMax = 100
-
-  //   return {
-  //     left: `${leftMax - (leftMax * (scrollProgress / 100))}vw`,
-  //   }
-  // }, [scrollProgress])
-
   return (
-    <nav>
-      <div
-        className={
-          scrollAmount > window.innerHeight - scrollThreshhold
-            ? "background-gradient left"
-            : "background-gradient"
-        }
-      ></div>
-      {/* {currentPage.pathname === "/" ? (
-        <div className={(scrollAmount > window.innerHeight - 20) ? "brand disappear" : "brand"}>
-          <h1 className="titleAnim" style={titleStyling}>VarDevs</h1>
-          <img src={Logo} className="logoAnim" style={logoStyling}/>
-        </div>
-      ) : ( */}
-      <div
-        className={
-          scrollAmount > window.innerHeight - scrollThreshhold
-            ? "brand disappear"
-            : "brand"
-        }
-      >
-        <Link to="/" className="logo">
-          <h1>VarDevs</h1>
-        </Link>
-        <img src={Logo} />
+    <>
+      <nav>
+        <div
+          className={
+            scrollAmount > window.innerHeight - scrollThreshhold
+              ? "background-gradient left"
+              : "background-gradient"
+          }
+        ></div>
+        <div
+          className={
+            scrollAmount > window.innerHeight - scrollThreshhold
+              ? "brand disappear"
+              : "brand"
+          }
+        >
+          <Link to="/" className="logo">
+            <h1>VarDevs</h1>
+          </Link>
+          <img src={Logo} />
 
-        {/* )} */}
+          {/* )} */}
+          <div className="links">
+            <Link to="/">Home</Link>
+            {/* <Link to="#">Demo</Link> */}
+            <Link to="/services">Services</Link>
+            <Link to="/about-us">About Us</Link>
+            {/* <Link to="#">Team</Link> */}
+            <Link to="/contact-us">Contact</Link>
+          </div>
+          <button
+            className="menu-toggle"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            {menuOpen ? (
+              <HiMiniXMark size={30} />
+            ) : (
+              <RxHamburgerMenu size={30} />
+            )}
+          </button>
+        </div>
+      </nav>
+      <div className={`side-nav ${menuOpen ? "open" : ""}`}>
         <div className="links">
-          <Link to="/">Home</Link>
-          {/* <Link to="#">Demo</Link> */}
-          <Link to="/services">Services</Link>
-          <Link to="/about-us">About Us</Link>
-          {/* <Link to="#">Team</Link> */}
-          <Link to="/contact-us">Contact</Link>
+          <Link to="/" onClick={() => setMenuOpen(false)}>
+            Home
+          </Link>
+          <Link to="/services" onClick={() => setMenuOpen(false)}>
+            Services
+          </Link>
+          <Link to="/about-us" onClick={() => setMenuOpen(false)}>
+            About Us
+          </Link>
+          <Link to="/contact-us" onClick={() => setMenuOpen(false)}>
+            Contact
+          </Link>
         </div>
       </div>
-    </nav>
+    </>
   );
 }
