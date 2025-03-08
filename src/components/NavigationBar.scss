@@ -21,6 +21,14 @@ nav {
     );
     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
   }
+  .logo {
+    color: white;
+    text-decoration: none;
+    z-index: 1;
+    padding-left: 10px;
+    padding-right: 5px;
+    font-size: 22px;
+  }
 
   .disappear {
     opacity: 0;
@@ -29,22 +37,31 @@ nav {
   .brand {
     display: flex;
     align-items: center;
-  
+    z-index: 1;
+
     .background-gradient {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        background: linear-gradient(180deg, rgb(0, 0, 0) -30%, rgba(255, 0, 0, 0) 175%);
-        backdrop-filter: blur(10px);
-        mask: linear-gradient(rgb(255, 255, 255), rgb(0, 0, 0), transparent);
-        transition: 0.3s;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: linear-gradient(
+        180deg,
+        rgb(0, 0, 0) -30%,
+        rgba(255, 0, 0, 0) 175%
+      );
+      backdrop-filter: blur(10px);
+      mask: linear-gradient(rgb(255, 255, 255), rgb(0, 0, 0), transparent);
+      transition: 0.3s;
     }
-    
+
     .left {
-        background: linear-gradient(to left, rgb(0, 0, 0) 0%, rgba(255, 0, 0, 0) 70%);
-        // mask: linear-gradient(rgb(255, 255, 255), rgb(0, 0, 0), transparent);
-        backdrop-filter: blur(0px);
-        transition: 0.3s;
+      background: linear-gradient(
+        to left,
+        rgb(0, 0, 0) 0%,
+        rgba(255, 0, 0, 0) 70%
+      );
+      // mask: linear-gradient(rgb(255, 255, 255), rgb(0, 0, 0), transparent);
+      backdrop-filter: blur(0px);
+      transition: 0.3s;
     }
 
     .titleAnim {

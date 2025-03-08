@@ -40,8 +40,14 @@ textarea {
 .App {
   background-color: #050505;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  // height: 100vh;
+  .Routes {
+    flex: 1;
+  }
 
   ::-webkit-scrollbar-thumb {
     background-color: rgba(255, 255, 255, 1);
   }
-  }
+}

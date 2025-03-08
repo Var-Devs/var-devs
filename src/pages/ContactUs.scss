@@ -2,7 +2,10 @@
   -webkit-appearance: none;
 }
 
-p, h1, h2, h3 {
+p,
+h1,
+h2,
+h3 {
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -11,9 +14,11 @@ p, h1, h2, h3 {
 
 .contactus-body {
   color: white;
-  padding-top: 100px;
+  padding-top: 150px;
   overflow: hidden;
-  
+  height: 100vh;
+  min-height: 900px;
+
   .contact-header {
     border-image: linear-gradient(to right, #ffff 0%, #0c0c0c 100%) 1;
     border-width: 1px;
@@ -28,7 +33,7 @@ p, h1, h2, h3 {
   }
   .contact-main {
     display: flex;
-    height: 700px;
+    height: 500px;
     .left {
       min-width: 60%;
 
@@ -46,9 +51,8 @@ p, h1, h2, h3 {
         font-size: 45px;
       }
       .main form {
-        padding-top: 150px;
         width: 100%;
-        height: 100%;
+        height: 500px;
         display: flex;
         justify-content: center;
         align-items: center;

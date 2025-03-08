@@ -5,7 +5,7 @@ import laptop_device from "../assets/images/laptop.png";
 import { pageTitle } from "..//hooks/pageTitle";
 
 export default function ServicePage() {
-  pageTitle("Services");
+  pageTitle("Servics");
 
   return (
     <div className="service-body">

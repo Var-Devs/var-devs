@@ -6,7 +6,8 @@ import NavigationBar from "./components/NavigationBar";
 import React from "react";
 import "./index.scss";
 import Footer from "./components/Footer";
-import PricingPage from "./pages/PricingPage";
+import PrivacyPage from "./pages/PrivacyPage";
+import AboutUs from "./pages/AboutUs";
 
 const App: React.FC = () => {
   return (
@@ -15,10 +16,10 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/services" element={<ServicePage />} />
-        <Route path="/privacy" element={<ContactUs />} />
+        <Route path="/privacy" element={<PrivacyPage />} />
+        <Route path="/about-us" element={<AboutUs />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/hi-antonio" element={<ContactUs />} />
-        <Route path="/price" element={<PricingPage />} />
       </Routes>
       <Footer />
     </div>
