@@ -1,7 +1,7 @@
 import "./HomePage.scss";
 
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
 import { ChatBubbleIcon } from "@radix-ui/react-icons";
 
@@ -11,65 +11,73 @@ import safariIcon from "../assets/icons/safari.png";
 
 import { pageTitle } from "../hooks/pageTitle";
 import { getScreenWidth } from "../hooks/screenWidth";
+//Imgages
+import project1 from "../assets/projects/project1.png";
+import project2 from "../assets/projects/project2.png";
+import React from "react";
 
 export default function HomePage() {
   const navigate = useNavigate();
   const screenWidth = getScreenWidth();
 
-  const [templates, setTemplates] = useState<{
-    top: string[];
-    bottom: string[];
-  }>({ top: [], bottom: [] });
+  // const [templates, setTemplates] = useState<{
+  //   top: string[];
+  //   bottom: string[];
+  // }>({ top: [], bottom: [] });
 
-  useEffect(() => {
-    const templates = Object.keys(
-      import.meta.glob("/src/assets/templates/*.{png,jpg,jpeg,svg}")
-    );
-    const topShuffleOrder = [...Array(8).keys()].sort(
-      () => Math.random() - 0.5
-    );
-    const bottomShuffleOrder = [...Array(8).keys()].sort(
-      () => Math.random() - 0.5
-    );
+  // useEffect(() => {
+  //   const templates = Object.keys(
+  //     import.meta.glob("/src/assets/templates/*.{png,jpg,jpeg,svg}")
+  //   );
+  //   const topShuffleOrder = [...Array(8).keys()].sort(
+  //     () => Math.random() - 0.5
+  //   );
+  //   const bottomShuffleOrder = [...Array(8).keys()].sort(
+  //     () => Math.random() - 0.5
+  //   );
 
-    const topTemplates = topShuffleOrder
-      .map((i) => templates[i])
-      .concat(topShuffleOrder.map((i) => templates[i]));
-    const bottomTemplates = bottomShuffleOrder
-      .map((i) => templates[i])
-      .concat(bottomShuffleOrder.map((i) => templates[i]));
-    setTemplates({
-      top: topTemplates,
-      bottom: bottomTemplates
-    });
-  }, []);
-
+  //   const topTemplates = topShuffleOrder
+  //     .map((i) => templates[i])
+  //     .concat(topShuffleOrder.map((i) => templates[i]));
+  //   const bottomTemplates = bottomShuffleOrder
+  //     .map((i) => templates[i])
+  //     .concat(bottomShuffleOrder.map((i) => templates[i]));
+  //   setTemplates({
+  //     top: topTemplates,
+  //     bottom: bottomTemplates
+  //   });
+  // }, []);
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    document
+      .getElementById(id)
+      ?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  };
   pageTitle("Welcome!");
 
   return (
     <div className="home-page">
-      <div className="templates-container">
-        <div className="template-row top-row">
-          <span>
-            {templates["top"].map((template, index) => (
-              <img
-                key={`template-${index}`}
-                src={template}
-                className="template"
-              />
-            ))}
-          </span>
-        </div>
-        <div className="template-row bottom-row">
-          <span>
-            {templates["bottom"].map((template, index) => (
-              <img
-                key={`template-${index}`}
-                src={template}
-                className="template"
-              />
-            ))}
-          </span>
+      <div className="project-gallery">
+        <div className="slide-wrapper">
+          <div className="slider">
+            <img id="project1" src={project1} alt="image of fashion website" />
+            <img
+              id="project2"
+              src={project2}
+              alt="image of protafolio website"
+              onClick={() => window.open("https://shub.website", "_blank")}
+            />
+          </div>
+          <div className="slide-nav">
+            <a
+              href="#project1"
+              onClick={(e) => handleScroll(e, "project1")}
+            ></a>
+            <a
+              href="#project2"
+              onClick={(e) => handleScroll(e, "project2")}
+            ></a>
+          </div>
         </div>
       </div>
       {screenWidth > 1200 ? (
